@@ -18,8 +18,8 @@ yourname = "TheOnlyWang"
 if yourname is None:
     print("please define your name, il will be used as a parameter to log")
 
-for model in ["Lasso", "Randomforest"]:
+for model in ['Lasso']:
     run = client.create_run(experiment_id)
-    client.log_metric(run.info.run_id, "rmse", 4.5)
+    client.log_metric(run.info.run_id, "rmse", 0.01)
     client.log_param(run.info.run_id, "model", model)
     client.log_param(run.info.run_id, "student_name", yourname)
